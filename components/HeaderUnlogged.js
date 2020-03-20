@@ -16,11 +16,11 @@ import Link from 'next/link';
 
 const HeaderUnlogged = () =>{
   return(
-        <Navbar style={{'background-color': '#6aed47'}} expand="lg" sticky="top">
+        <Navbar style={{'background-color': '#28A746'}} expand="lg" sticky="top">
             <Container className="d-flex justify-content-between">
                 <Navbar.Brand href="#App">
                   <Link href="/index">
-                    <h2 className = "text-light"><strong>Съём!</strong></h2>
+                    <h2 className = "text-light"><strong>Легко!</strong></h2>
                   </Link>
                 </Navbar.Brand>
                 <ButtonGroup aria-label="Basic example">
