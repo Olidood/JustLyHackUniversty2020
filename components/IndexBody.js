@@ -34,13 +34,13 @@ function MainCard(){
 
 function LeftSidePic(props){
   return(
-    <Container>
+    <Container className='my-2'>
       <Row>
         <Col lg={4} className='p-2'>
-          <Image src='https://sun9-42.userapi.com/c5QiacMFqNxf7cAVbiHBNFRpHgysngaUcPPZAg/SXrIyPLsTOQ.jpg' rounded/>
+          <Image src={props.url} fluid rounded/>
         </Col>
         <Col lg={8}  className='p-2' style={{'background-color':'white'}}>
-          <h3 className='p-2'>Легко! - это простой способ быстро найти и снять квартиру!</h3>
+          <h3 className='p-2'>{'Легко! - это' + props.hText }</h3>
         </Col>
       </Row>
     </Container>
@@ -49,13 +49,13 @@ function LeftSidePic(props){
 
 function RighSidePic(props){
   return(
-    <Container>
+    <Container className='my-2'>
       <Row>
-        <Col lg={8}>
-
+        <Col lg={8} className='p-2' style={{'background-color':'white'}}>
+          <h3 className='p-2'>{'Легко! - это' + props.hText }</h3>
         </Col>
-        <Col lg={4}>
-
+        <Col lg={4} className='p-2'>
+          <Image src={props.url} fluid rounded/>
         </Col>
       </Row>
     </Container>
@@ -73,7 +73,9 @@ export default class  IndexBody extends React.Component{
       <div>
         <Container fluid='true'>
           <MainCard/>
-          <LeftSidePic/>
+          <LeftSidePic url='https://sun9-22.userapi.com/slcKjeq7xhgWIJLYPuG2Sksnvnq0KJ9aoQbB1Q/S161sUg4PEY.jpg' hText='простой способ быстро найти и снять квартиру!'/>
+          <RighSidePic url='https://sun9-42.userapi.com/c5QiacMFqNxf7cAVbiHBNFRpHgysngaUcPPZAg/SXrIyPLsTOQ.jpg' hText='простой способ быстро сдать квартиру!'/>
+          <LeftSidePic url='https://sun9-22.userapi.com/fWQilUyld3jHETWWxsHxGHcPm_9--ErwS2KN3A/VdccgdPsAQ8.jpg' hText='надежность!'/>
         </Container>
       </div>
     );
