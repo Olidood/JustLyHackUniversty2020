@@ -6,17 +6,17 @@ import Router from "next/Router"
 import Link from 'next/link';
 
 export default function SignUpBody(){
-  let url = '192.168.43.201:8080';
+  let url = '192.168.0.5';
   const handler = (e) => {
     let login = document.getElementById('inputLogin').value;
     let password = document.getElementById('inputPassword').value;
     let confirmationPassword = document.getElementById('confirmPassword').value;
     let canGoToNext = false;
     if(password == confirmationPassword){
-      fetch('http://'+ url +'/api/v1/userModules/addUser/'+ login +'/'+ password).then(res => res.json()).then((result) =>{
+      fetch('http://'+ url +':8080/api/v1/users/signup/'+ login +'/'+ password).then(res => res.json()).then((result) =>{
         if(result.code == 200){
           Router.push({
-            pathname: '/signin',
+            pathname: '/signIn',
           })
         }
       },(error)=>{

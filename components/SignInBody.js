@@ -16,8 +16,8 @@ export default class SignInBody extends React.Component{
     const handler = (e) => {
       var login = document.getElementById('inputLogin').value;
       let password = document.getElementById('inputPassword').value;
-      let url = '192.168.43.201:8080';
-      fetch('http://'+ url +'/api/v1/userModules/signIn/'+ login +'/'+ password).then(res => res.json()).then((result) =>{
+      let url = '192.168.0.5';
+      fetch('http://'+ url +':8080/api/v1/users/signin/'+ login +'/'+ password).then(res => res.json()).then((result) =>{
         if(result.code == 200){
           Router.push({
             pathname: '/indexLogged',
