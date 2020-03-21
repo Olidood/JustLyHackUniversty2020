@@ -1,8 +1,8 @@
 module.exports = async function(f, opts){
     const Mongoose = require("mongoose");
     const Search = Mongoose.model("search");
-    
-    f.get('appinfo/:login', async (req, res)=>{
+
+    f.get('userinfo/:login', async (req, res)=>{
         let user = new User({login: req.params.login});
 
         User.findOne({login: req.params.login}).select('name surname sex dateborn email phone key idcontract').exec(function (err, pass) {
