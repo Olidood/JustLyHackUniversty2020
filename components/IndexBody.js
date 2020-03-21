@@ -6,15 +6,23 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image'
 
+import Link from 'next/link';
 
-
-function MainCard(){
+function MainCard(props){
+  let blockGet, blockGive;
+  if(props.logged == "true"){
+    blockGet = <Link href="/browseAparts"><Button className='btn-success' size="lg" >Снять!</Button></Link>
+    blockGive = <Link href="/indexLogged"><Button className='btn-success' size="lg" >Сдать!</Button></Link>
+  }else{
+    blockGet = <Link href="/signIn"><Button className='btn-success' size="lg" >Снять!</Button></Link>
+    blockGive = <Link href="/signIn"><Button className='btn-success' size="lg" >Сдать!</Button></Link>
+  }
   return(
     <Container  className='mx-auto my-2 w-100 px-0'>
       <Row>
         <Col lg={3} className="text-center my-auto px-1">
             <Jumbotron style={{'background-color':'#28A746'}}  className="my-2 px-2 py-4">
-              <Button className='btn-success' size="lg" >Снять!</Button>
+              {blockGet}
             </Jumbotron>
         </Col>
         <Col lg={6} className="text-center my-auto px-1">
@@ -30,7 +38,7 @@ function MainCard(){
         </Col>
         <Col lg={3} className="text-center my-auto px-1">
           <Jumbotron style={{'background-color':'#28A746'}} className="my-2 px-2 py-4 ">
-            <Button className='btn-success' size="lg" >Сдать!</Button>
+            {blockGive}
           </Jumbotron>
         </Col>
       </Row>
@@ -78,7 +86,7 @@ export default class  IndexBody extends React.Component{
     return(
       <div>
         <Container fluid='true'>
-          <MainCard/>
+          <MainCard logged={this.props.logged}/>
           <LeftSidePic url='https://sun9-22.userapi.com/slcKjeq7xhgWIJLYPuG2Sksnvnq0KJ9aoQbB1Q/S161sUg4PEY.jpg' hText='простой способ быстро найти и снять квартиру!'/>
           <RighSidePic url='https://sun9-42.userapi.com/c5QiacMFqNxf7cAVbiHBNFRpHgysngaUcPPZAg/SXrIyPLsTOQ.jpg' hText='простой способ быстро сдать квартиру!'/>
           <LeftSidePic url='https://sun9-52.userapi.com/46U0a0sZBLjDV7CfgIp-8ZbiZcn7gel5axuDUw/gSfe9kl69rE.jpg' hText='надежность!'/>

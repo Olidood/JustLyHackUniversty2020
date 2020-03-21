@@ -1,4 +1,4 @@
-import HeaderUnlogged from '../components/HeaderUnlogged';
+import HeaderLogged from '../components/HeaderLogged';
 import Head from "next/head";
 import IndexBody from '../components/IndexBody';
 import Footer from '../components/Footer'
@@ -14,12 +14,12 @@ function Home(){
   </div>
 }
 
-export default function Index(){
+export default function IndexLogged(){
     return(
       <div style={{'background-image':'url(https://sun9-12.userapi.com/VjptDjuK4wfiu0h9w-D76kG95KUYVfNUHrSzZA/hsl-nw7Ziew.jpg)'}}>
         <Home/>
-        <HeaderUnlogged/>
-        <IndexBody logged="false"/>
+        <HeaderLogged/>
+        <IndexBody logged="true"/>
         <Footer/>
       </div>
     );
