@@ -10,24 +10,30 @@ import Image from 'react-bootstrap/Image'
 
 function MainCard(){
   return(
-    <Container  className='mx-auto my-2 w-50'>
-      <Jumbotron style={{'background-color':'white'}} className="my-2 px-4 py-4">
-        <Container>
-          <Row>
-            <Col lg={12} className='text-center m-2'>
-              <h3>Снять?! Сдать?! - "<span style={{color:'#28A746'}}>Легко!</span>"</h3>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={6} className='text-center p-2'>
-              <Button className='btn-success'>Снять!</Button>
-            </Col>
-            <Col lg={6} className='text-center p-2'>
-              <Button className='btn-success'>Сдать!</Button>
-            </Col>
-          </Row>
-        </Container>
-      </Jumbotron>
+    <Container  className='mx-auto my-2 w-100 px-0'>
+      <Row>
+        <Col lg={3} className="text-center my-auto px-1">
+            <Jumbotron style={{'background-color':'#28A746'}}  className="my-2 px-2 py-4">
+              <Button className='btn-success' size="lg" >Снять!</Button>
+            </Jumbotron>
+        </Col>
+        <Col lg={6} className="text-center my-auto px-1">
+          <Jumbotron style={{'background-color':'white'}} className="my-2 px-2 py-4">
+            <Container>
+              <Row>
+                <Col lg={12} className='text-center m-2'>
+                  <h3>Снять?! Сдать?! - "<span style={{color:'#28A746'}}>Легко!</span>"</h3>
+                </Col>
+              </Row>
+            </Container>
+          </Jumbotron>
+        </Col>
+        <Col lg={3} className="text-center my-auto px-1">
+          <Jumbotron style={{'background-color':'#28A746'}} className="my-2 px-2 py-4 ">
+            <Button className='btn-success' size="lg" >Сдать!</Button>
+          </Jumbotron>
+        </Col>
+      </Row>
     </Container>
   );
 }
@@ -75,7 +81,7 @@ export default class  IndexBody extends React.Component{
           <MainCard/>
           <LeftSidePic url='https://sun9-22.userapi.com/slcKjeq7xhgWIJLYPuG2Sksnvnq0KJ9aoQbB1Q/S161sUg4PEY.jpg' hText='простой способ быстро найти и снять квартиру!'/>
           <RighSidePic url='https://sun9-42.userapi.com/c5QiacMFqNxf7cAVbiHBNFRpHgysngaUcPPZAg/SXrIyPLsTOQ.jpg' hText='простой способ быстро сдать квартиру!'/>
-          <LeftSidePic url='https://sun9-22.userapi.com/fWQilUyld3jHETWWxsHxGHcPm_9--ErwS2KN3A/VdccgdPsAQ8.jpg' hText='надежность!'/>
+          <LeftSidePic url='https://sun9-52.userapi.com/46U0a0sZBLjDV7CfgIp-8ZbiZcn7gel5axuDUw/gSfe9kl69rE.jpg' hText='надежность!'/>
         </Container>
       </div>
     );
