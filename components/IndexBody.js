@@ -18,7 +18,7 @@ function MainCard(){
             </Jumbotron>
         </Col>
         <Col lg={6} className="text-center my-auto px-1">
-          <Jumbotron style={{'background-color':'white'}} className="my-2 px-2 py-4">
+          <Jumbotron style={{'background-color':'rgba(255, 255, 255, .75)'}} className="my-2 px-2 py-4">
             <Container>
               <Row>
                 <Col lg={12} className='text-center m-2'>
@@ -45,8 +45,8 @@ function LeftSidePic(props){
         <Col lg={4} className='p-2'>
           <Image src={props.url} fluid rounded/>
         </Col>
-        <Col lg={8}  className='p-2' style={{'background-color':'white'}}>
-          <h3 className='p-2'>{'Легко! - это' + props.hText }</h3>
+        <Col lg={8}  className='p-2' style={{'background-color':'rgba(255, 255, 255, .75)'}}>
+          <h3 className='p-2'>{'Легко! - это ' + props.hText }</h3>
         </Col>
       </Row>
     </Container>
@@ -57,8 +57,8 @@ function RighSidePic(props){
   return(
     <Container className='my-2'>
       <Row>
-        <Col lg={8} className='p-2' style={{'background-color':'white'}}>
-          <h3 className='p-2'>{'Легко! - это' + props.hText }</h3>
+        <Col lg={8} className='p-2' style={{'background-color':'rgba(255, 255, 255, .75)'}}>
+          <h3 className='p-2'>{'Легко! - это ' + props.hText }</h3>
         </Col>
         <Col lg={4} className='p-2'>
           <Image src={props.url} fluid rounded/>

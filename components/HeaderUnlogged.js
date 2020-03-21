@@ -24,10 +24,10 @@ const HeaderUnlogged = () =>{
                   </Link>
                 </Navbar.Brand>
                 <ButtonGroup aria-label="Basic example">
-                  <Link href="/signin">
+                  <Link href="/signIn">
                     <Button name="login-btn-header" className="btn-light">Войти</Button>
                   </Link>
-                  <Link href="/signup">
+                  <Link href="/signUp">
                     <Button href="#App" name="register-btn-header" className="btn-light">Регистрация</Button>
                   </Link>
                 </ButtonGroup>
