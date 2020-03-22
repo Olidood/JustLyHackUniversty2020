@@ -1,11 +1,11 @@
 module.exports = async function(f, opts){
     const Mongoose = require("mongoose");
-    const MyAps = Mongoose.model("myaps");
+    const Search = Mongoose.model("search");
 
     f.get('appinfo/:appartmentsid', async (req, res)=>{
         let user = new User({appartmentsid: req.params.appartmentsid});
 
-        MyAps.findOne({appartmentsid: req.params.appartmentsid}).select('floorap allfloors sqware cost roomsnum town street house metro renttype contacts description').exec(function (err, pass) {
+        User.findOne({appartmentsid: req.params.appartmentsid}).select('floorap allfloors sqware cost roomsnum town street house metro renttype contacts description').exec(function (err, pass) {
             if(err) res.send({code:400});
             else {
 
