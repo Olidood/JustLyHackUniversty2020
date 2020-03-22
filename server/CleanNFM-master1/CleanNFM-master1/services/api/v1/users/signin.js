@@ -8,7 +8,7 @@ module.exports = async function(f, opts) {
 
        User.findOne({login: req.params.login, password: req.params.password}, function (err, login) {
            if (login) {
-               res.send({code: 200});
+               res.send({code: 200, login: req.params.login});
                //res.type('json').send({user});
            } else
                res.send({code: 228});

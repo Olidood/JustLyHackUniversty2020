@@ -1,15 +1,15 @@
 module.exports = async function(f, opts){
     const Mongoose = require("mongoose");
     const Search = Mongoose.model("search");
-    
-    f.get('appinfo/:login', async (req, res)=>{
-        let user = new User({login: req.params.login});
 
-        User.findOne({login: req.params.login}).select('name surname sex dateborn email phone key idcontract').exec(function (err, pass) {
+    f.get('appinfo/:appartmentsid', async (req, res)=>{
+        let user = new User({appartmentsid: req.params.appartmentsid});
+
+        User.findOne({appartmentsid: req.params.appartmentsid}).select('floorap allfloors sqware cost roomsnum town street house metro renttype contacts description').exec(function (err, pass) {
             if(err) res.send({code:400});
             else {
 
-		        res.send({code:200, name: pass.name, surname: pass.surname, sex: pass.sex,  dateborn: pass.dateborn, email: pass.email, phone: pass.phone, key: pass.key, idcontract: pass.idcontract});
+		        res.send({code:200, floorap: pass.floorap, allfloors: pass.allfloors, sqware: pass.sqware,  cost: pass.cost, roomsnum: pass.roomsnum, town: pass.town, street: pass.street, house: pass.house, metro: pass.metro, renttype: pass.renttype, contacts: pass.contacts, description: pass.description});
 		    }
         })
     })
