@@ -104,6 +104,32 @@ const ContractSchema = new Schema({
 
 const SearchSchema = new Schema(
     {
+        ownerlogin:String,
+        appartmentsid: String,
+        floorap: String,
+        allfloors: String,
+        sqware: String,
+        cost: String,
+        roomsnum: String,
+        town: String,
+        street: String,
+        house: String,
+        metro: String,
+        renttype: String,
+        contacts: [
+          {
+            phnnumb: String,
+            emailadr: String
+          }
+        ],
+        description: String
+
+    }
+);
+
+const MyApsSchema = new Schema(
+    {
+        ownerlogin:String,
         appartmentsid: String,
         floorap: String,
         allfloors: String,
@@ -175,6 +201,7 @@ UserSchema.methods = {};
   }
 };
 */
+Mongoose.model("myaps", MyApsSchema);
 Mongoose.model("user", UserSchema);
 Mongoose.model("contract", ContractSchema);
 Mongoose.model("search", SearchSchema);
